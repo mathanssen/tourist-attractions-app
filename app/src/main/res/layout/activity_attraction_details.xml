@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AttractionDetails"
+    android:orientation="vertical"
+    android:background="@color/colorMain"
+    android:paddingTop="3dp"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin">
+
+    <TextView
+        android:id="@+id/text_title_details"
+        android:fontFamily="casual"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Paulista Avenue"
+        android:textAllCaps="true"
+        android:textColor="@color/colorButton"
+        android:textStyle="bold"
+        android:textSize="35dp"
+        android:gravity="center"
+        />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="330dp"
+        android:id="@+id/image_details"
+        android:src="@drawable/avenue"
+        android:scaleType="centerCrop"
+        android:onClick="changeImage"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/text_description_details"
+        android:textAlignment="center"
+        android:typeface="serif"
+        android:textStyle="italic"
+        android:shadowColor="#ff8787"
+        android:shadowRadius="2"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus eget lacus tincidunt, porta lacus vel, viverra ipsum. Aenean dignissim tempus."
+        android:textSize="18dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Address: "
+            android:textSize="20dp"
+            android:typeface="serif"
+            android:textStyle="normal"
+            android:shadowColor="#ff8787"
+            android:shadowRadius="2"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:layout_margin="5dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:shadowColor="#ff8787"
+            android:id="@+id/text_address_details"
+            android:typeface="serif"
+            android:textStyle="normal"
+            android:shadowRadius="2"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:text="Paulista Avenue"
+            android:textSize="20dp"
+            android:layout_margin="5dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pricing: R$"
+            android:textSize="20dp"
+            android:typeface="serif"
+            android:textStyle="normal"
+            android:shadowColor="#ff8787"
+            android:shadowRadius="2"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:layout_margin="5dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:shadowColor="#ff8787"
+            android:id="@+id/text_pricing_details"
+            android:typeface="serif"
+            android:textStyle="normal"
+            android:shadowRadius="2"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:text="0"
+            android:textSize="20dp"
+            android:layout_margin="5dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Phone No.: "
+            android:textSize="20dp"
+            android:typeface="serif"
+            android:textStyle="normal"
+            android:shadowColor="#ff8787"
+            android:shadowRadius="2"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:layout_margin="5dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_phone_details"
+            android:shadowColor="#ff8787"
+            android:shadowRadius="2"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:text="012341234"
+            android:layout_margin="5dp"
+            android:typeface="serif"
+            android:textStyle="normal"
+            android:textSize="20dp"
+            android:onClick="numberPressed"
+            android:autoLink="phone" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rate this event:   "
+            android:textSize="20dp"
+            android:typeface="serif"
+            android:textStyle="normal"
+            android:shadowColor="#ff8787"
+            android:shadowRadius="2"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:layout_margin="5dp"/>
+
+        <RatingBar
+            android:layout_marginTop="7dp"
+            android:id="@+id/ratingBar"
+            style="@style/foodRatingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:isIndicator="false"
+            android:numStars="5"
+            android:rating="3.0" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/text_website_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Go to the website!"
+            android:typeface="serif"
+            android:textStyle="italic"
+            android:shadowColor="#ff8787"
+            android:shadowRadius="2"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:textSize="20dp"
+            android:textColorLink="#694646"
+            android:background="@color/colorMain"/>
+
+        <ImageView
+            android:id="@+id/image_heart"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="140dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/heart_black"
+            android:background="@color/colorMain"
+            android:onClick="addToWishList"/>
+    </LinearLayout>
+
+
+</LinearLayout>

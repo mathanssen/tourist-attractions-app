@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">TouristAttractionApp</string>
+    <string name="my_app_title">Navigation App</string>
+    <string name="home">Home</string>
+    <string name="navigation_drawer_open">Open Draw</string>
+    <string name="navigation_drawer_close">Close Draw</string>
+</resources>

@@ -1,0 +1,25 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="none">
+
+
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/emoji"
+            android:title="Attractions" />
+        <item
+            android:id="@+id/nav_do_something"
+            android:icon="@drawable/heart_red"
+            android:title="Wish List" />
+        <item
+            android:id="@+id/nav_map"
+            android:icon="@drawable/map"
+            android:title="Map" />
+        <item
+            android:id="@+id/nav_list_names"
+            android:icon="@drawable/abc_vector_test"
+            android:title="Log out" />
+
+    </group>
+
+</menu>

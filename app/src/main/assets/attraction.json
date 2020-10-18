@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Paulista Avenue",
+    "address": "Avenida Paulista",
+    "phone": "012341234",
+    "website": "'https://pt.wikipedia.org/wiki/Avenida_Paulista'",
+    "description":"Avenida Paulista is one of the most important streets in the city of São Paulo, the capital of the state of the same name.",
+    "pricing": 0,
+    "image": "avenue",
+    "favorite": false
+  },
+  {
+    "name": "MASP",
+    "address": "Avenida Paulista, 1578",
+    "phone": "012341235",
+    "website": "'https://masp.org.br/'",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus eget lacus tincidunt, porta lacus vel, viverra ipsum. Aenean dignissim tempus.",
+    "pricing": 20,
+    "image": "masp",
+    "favorite": false
+  },
+  {
+    "name": "Football Museum",
+    "address": "Praça Charles Miler",
+    "phone": "012341236",
+    "website": "'https://museudofutebol.org.br/'",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus eget lacus tincidunt, porta lacus vel, viverra ipsum. Aenean dignissim tempus.",
+    "pricing": 50,
+    "image": "museum",
+    "favorite": false
+  },
+  {
+    "name": "Ibirapuera Park",
+    "address": "Parque do Ibirapuera",
+    "phone": "012341237",
+    "website": "'https://www.prefeitura.sp.gov.br/cidade/secretarias/meio_ambiente/parques/regiao_sul/index.php?p=14062'",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus eget lacus tincidunt, porta lacus vel, viverra ipsum. Aenean dignissim tempus..",
+    "pricing": 0,
+    "image": "park",
+    "favorite": false
+  },
+  {
+    "name": "Neo Quimica Arena",
+    "address": "Av. Miguel Ignácio Curi",
+    "phone": "012341238",
+    "website": "'https://arena.corinthians.com.br/'",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus eget lacus tincidunt, porta lacus vel, viverra ipsum. Aenean dignissim tempus..",
+    "pricing": 100,
+    "image": "stadium",
+    "favorite": false
+  }
+]

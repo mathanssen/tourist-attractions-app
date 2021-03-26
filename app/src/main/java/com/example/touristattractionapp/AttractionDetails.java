@@ -53,7 +53,6 @@ public class AttractionDetails extends AppCompatActivity {
     private JSONArray accountsArray = new JSONArray();
     private int currentPosition = 0;
 
-
     // On create properties and methods
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -142,7 +141,7 @@ public class AttractionDetails extends AppCompatActivity {
         TextView textView = (TextView) findViewById(R.id.text_website_details);
         textView.setClickable(true);
         textView.setMovementMethod(LinkMovementMethod.getInstance());
-        String text = "<a href="+ website +"> Go to the website! </a>";
+        String text = "<a href=" + website + "> Go to the website! </a>";
         textView.setText(Html.fromHtml(text));
     }
 
@@ -160,25 +159,23 @@ public class AttractionDetails extends AppCompatActivity {
         try {
             inputStream = openFileInput("wish_list.json");
 
-            if ( inputStream != null ) {
+            if (inputStream != null) {
                 InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
                 BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
                 String receiveString = "";
                 StringBuilder stringBuilder = new StringBuilder();
 
-                while ( (receiveString = bufferedReader.readLine()) != null ) {
+                while ((receiveString = bufferedReader.readLine()) != null) {
                     stringBuilder.append(receiveString);
                 }
 
                 ret = stringBuilder.toString();
             }
-        }
-        catch (FileNotFoundException e) {
+        } catch (FileNotFoundException e) {
             Log.e("login activity", "File not found: " + e.toString());
         } catch (IOException e) {
             Log.e("login activity", "Can not read file: " + e.toString());
-        }
-        finally {
+        } finally {
             try {
                 inputStream.close();
             } catch (IOException e) {
@@ -215,10 +212,11 @@ public class AttractionDetails extends AppCompatActivity {
                 double pricing = currentObject.getDouble("pricing");
                 boolean favorite = currentObject.getBoolean("favorite");
                 String image = currentObject.getString("image");
-                Attraction attraction = new Attraction(name, address, phone, website, description, pricing, favorite, image);
+                Attraction attraction = new Attraction(name, address, phone, website, description, pricing, favorite,
+                        image);
                 this.attractions.add(attraction);
             }
-        } catch(JSONException e) {
+        } catch (JSONException e) {
             e.printStackTrace();
             return;
         }
@@ -264,8 +262,7 @@ public class AttractionDetails extends AppCompatActivity {
             accountObject.put("favorite", this.attraction.isFavorite());
             this.accountsArray.put(accountObject);
             Log.d(TAG, "PRINT" + this.accountsArray);
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             Log.d(TAG, "Failed to create JSON object");
             e.printStackTrace();
         }
@@ -279,7 +276,8 @@ public class AttractionDetails extends AppCompatActivity {
     // Write and storage JSON data
     public void writeToFile(String filename, String data) {
         try {
-            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(openFileOutput(filename, Context.MODE_PRIVATE));
+            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(
+                    openFileOutput(filename, Context.MODE_PRIVATE));
             Log.d(TAG, "File is saved: " + this.getFilesDir().getAbsolutePath());
             outputStreamWriter.write(data);
             outputStreamWriter.close();
@@ -333,8 +331,7 @@ public class AttractionDetails extends AppCompatActivity {
             accountObject.put("name", this.attraction.getName());
             accountObject.put("favorite", this.attraction.isFavorite());
             accountsArray.put(accountObject);
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             Log.d(TAG, "Failed to create JSON object");
             e.printStackTrace();
         }
@@ -358,22 +355,20 @@ public class AttractionDetails extends AppCompatActivity {
                 accountObject.put("name", this.attraction.getName());
                 accountObject.put("favorite", this.attraction.isFavorite());
                 accountsArray.put(accountObject);
-            }
-            catch (Exception e) {
+            } catch (Exception e) {
                 Log.d(TAG, "Failed to create JSON object");
                 e.printStackTrace();
             }
         }
         String data = accountsArray.toString();
-//        this.writeToFile("user_accounts.json", data);
+        // this.writeToFile("user_accounts.json", data);
         return data;
     }
 
     // Check if a file exists in the internal storage
-    public boolean fileExist(String filename){
+    public boolean fileExist(String filename) {
         File file = getBaseContext().getFileStreamPath(filename);
         return file.exists();
     }
-
 
 }

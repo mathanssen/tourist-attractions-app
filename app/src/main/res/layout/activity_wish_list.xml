@@ -13,26 +13,21 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:background="@color/colorMain"
     tools:context=".WishList">
-
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         >
-
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary" />
-
     </com.google.android.material.appbar.AppBarLayout>
-
     <ListView
         android:layout_width="match_parent"
         android:layout_height="550dp"
         android:id="@+id/wishList">
     </ListView>
-
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -46,7 +41,6 @@
             android:text="EVENTS"
             android:textSize="20dp"
             android:theme="@style/RedButton"/>
-
         <Button
             android:layout_marginTop="30dp"
             android:layout_width="wrap_content"
@@ -58,7 +52,6 @@
             android:text="MAP"
             android:textSize="20dp"
             android:theme="@style/RedButton"/>
-
         <Button
             android:layout_marginTop="30dp"
             android:layout_width="wrap_content"
@@ -69,5 +62,4 @@
             android:theme="@style/RedButton"
             android:gravity="center"/>
     </LinearLayout>
-
 </LinearLayout>

@@ -46,23 +46,21 @@ public class Register extends AppCompatActivity {
         InputStream inputStream = null;
         try {
             inputStream = openFileInput("user_accounts.json");
-            if ( inputStream != null ) {
+            if (inputStream != null) {
                 InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
                 BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
                 String receiveString = "";
                 StringBuilder stringBuilder = new StringBuilder();
-                while ( (receiveString = bufferedReader.readLine()) != null ) {
+                while ((receiveString = bufferedReader.readLine()) != null) {
                     stringBuilder.append(receiveString);
                 }
                 ret = stringBuilder.toString();
             }
-        }
-        catch (FileNotFoundException e) {
+        } catch (FileNotFoundException e) {
             Log.e("login activity", "File not found: " + e.toString());
         } catch (IOException e) {
             Log.e("login activity", "Can not read file: " + e.toString());
-        }
-        finally {
+        } finally {
             try {
                 inputStream.close();
             } catch (IOException e) {
@@ -117,7 +115,8 @@ public class Register extends AppCompatActivity {
 
     private void writeToFile(String filename, String data) {
         try {
-            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(openFileOutput(filename, Context.MODE_PRIVATE));
+            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(
+                    openFileOutput(filename, Context.MODE_PRIVATE));
             outputStreamWriter.write(data);
             outputStreamWriter.close();
             Log.d(TAG, "File written");

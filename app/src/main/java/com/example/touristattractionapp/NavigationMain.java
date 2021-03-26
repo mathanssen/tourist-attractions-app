@@ -18,14 +18,11 @@ public class NavigationMain extends AppCompatActivity implements NavigationView.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigation_main);
 
-        DrawerLayout drawer = (DrawerLayout)
-                findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
-        ActionBarDrawerToggle toggle =
-                new ActionBarDrawerToggle(this, drawer, toolbar,
-                        R.string.navigation_drawer_open,
-                        R.string.navigation_drawer_close);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open,
+                R.string.navigation_drawer_close);
 
         if (drawer != null) {
             drawer.addDrawerListener(toggle);
@@ -33,8 +30,7 @@ public class NavigationMain extends AppCompatActivity implements NavigationView.
 
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView)
-                findViewById(R.id.nav_view);
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
 
         if (navigationView != null) {
             navigationView.setNavigationItemSelectedListener((NavigationView.OnNavigationItemSelectedListener) this);

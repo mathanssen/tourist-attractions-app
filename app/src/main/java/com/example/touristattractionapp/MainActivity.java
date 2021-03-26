@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         this.preferences = this.getSharedPreferences(PREFERENCES_NAME, Context.MODE_PRIVATE);
         boolean sharedPreferencesExists = checkSharedPreferencesExists();
         if (sharedPreferencesExists == true) {
-            String usernameSaved = this.preferences.getString("username","");
+            String usernameSaved = this.preferences.getString("username", "");
             String passwordSaved = this.preferences.getString("password", "");
             etUsername = (EditText) findViewById(R.id.text_login_username);
             etPassword = (EditText) findViewById(R.id.text_login_password);
@@ -113,25 +113,23 @@ public class MainActivity extends AppCompatActivity {
         try {
             inputStream = openFileInput("user_accounts.json");
 
-            if ( inputStream != null ) {
+            if (inputStream != null) {
                 InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
                 BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
                 String receiveString = "";
                 StringBuilder stringBuilder = new StringBuilder();
 
-                while ( (receiveString = bufferedReader.readLine()) != null ) {
+                while ((receiveString = bufferedReader.readLine()) != null) {
                     stringBuilder.append(receiveString);
                 }
 
                 ret = stringBuilder.toString();
             }
-        }
-        catch (FileNotFoundException e) {
+        } catch (FileNotFoundException e) {
             Log.e("login activity", "File not found: " + e.toString());
         } catch (IOException e) {
             Log.e("login activity", "Can not read file: " + e.toString());
-        }
-        finally {
+        } finally {
             try {
                 inputStream.close();
             } catch (IOException e) {
@@ -179,7 +177,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // Other methods
-    public boolean fileExist(String filename){
+    public boolean fileExist(String filename) {
         File file = getBaseContext().getFileStreamPath(filename);
         return file.exists();
     }
@@ -225,7 +223,7 @@ public class MainActivity extends AppCompatActivity {
                 Log.d(TAG, "Successfully added: " + account.toString());
                 Log.d(TAG, "========");
             }
-        } catch(JSONException e) {
+        } catch (JSONException e) {
             e.printStackTrace();
             return;
         }
@@ -235,7 +233,7 @@ public class MainActivity extends AppCompatActivity {
         Log.d(TAG, "Parsing JSON: " + jsonArray.toString());
         boolean isRegistered = false;
         try {
-            for (int i= 0; i < jsonArray.length(); i++) {
+            for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject currentObject = jsonArray.getJSONObject(i);
                 String username = currentObject.getString("username");
                 String password = currentObject.getString("password");
@@ -252,7 +250,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void writeToFile(String filename, String data) {
         try {
-            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(openFileOutput(filename, Context.MODE_PRIVATE));
+            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(
+                    openFileOutput(filename, Context.MODE_PRIVATE));
             Log.d(TAG, "File is saved: " + this.getFilesDir().getAbsolutePath());
             outputStreamWriter.write(data);
             outputStreamWriter.close();
@@ -289,8 +288,7 @@ public class MainActivity extends AppCompatActivity {
                 accountObject.put("username", account.getName());
                 accountObject.put("password", account.getPassword());
                 accountsArray.put(i, accountObject);
-            }
-            catch (Exception e) {
+            } catch (Exception e) {
                 Log.d(TAG, "Failed to create JSON object");
                 e.printStackTrace();
             }

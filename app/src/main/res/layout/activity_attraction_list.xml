@@ -14,19 +14,15 @@
     tools:showIn="@layout/app_bar_main"
     android:background="@color/colorMain"
     tools:context=".AttractionList">
-
     <ListView
         android:layout_width="match_parent"
         android:layout_height="550dp"
         android:id="@+id/attractionList">
     </ListView>
-
-
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-
         <Button
             android:layout_marginTop="30dp"
             android:layout_width="wrap_content"
@@ -36,7 +32,6 @@
             android:textSize="20dp"
             android:theme="@style/RedButton"
             android:gravity="center"/>
-
         <Button
             android:layout_marginTop="30dp"
             android:layout_width="wrap_content"
@@ -48,7 +43,6 @@
             android:textSize="20dp"
             android:theme="@style/RedButton"
             android:gravity="center"/>
-
         <Button
             android:layout_marginTop="30dp"
             android:layout_width="wrap_content"
@@ -59,10 +53,8 @@
             android:theme="@style/RedButton"
             android:gravity="center"/>
     </LinearLayout>
-
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/frame_container"/>
-
 </LinearLayout>

@@ -8,7 +8,6 @@
     tools:context=".MainActivity"
     android:background="@color/colorMain"
     android:orientation="vertical">
-
     <!-- Logo -->
     <ImageView
         android:id="@+id/image_logo"
@@ -20,7 +19,6 @@
         android:padding="30dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -33,7 +31,6 @@
         android:shadowDx="1"
         android:shadowDy="1"
         />
-
     <!-- Login -->
     <EditText
         android:id="@+id/text_login_username"
@@ -48,7 +45,6 @@
         android:hint="Username"
         android:inputType="textPersonName"
         android:textSize="25dp" />
-
     <EditText
         android:id="@+id/text_login_password"
         android:layout_width="300dp"
@@ -62,7 +58,6 @@
         android:focusable="true"
         android:inputType="textPassword"
         android:textSize="25dp"/>
-
     <CheckBox
         android:id="@+id/checkbox_remember_me"
         android:layout_width="wrap_content"
@@ -74,7 +69,6 @@
         android:textColor="#696969"
         android:buttonTint="#696969"
         />
-
     <Button
         android:id="@+id/button_login"
         android:layout_width="350dp"
@@ -85,7 +79,6 @@
         android:textSize="20dp"
         android:layout_marginTop="30dp"
         android:onClick="loginPressed"/>
-
     <Button
         android:id="@+id/button_go_register"
         android:layout_width="350dp"
@@ -95,5 +88,4 @@
         android:text="Register"
         android:textSize="20dp"
         android:onClick="firstRegisterPressed"/>
-
 </LinearLayout>

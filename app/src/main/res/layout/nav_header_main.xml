@@ -10,7 +10,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:theme="@style/ThemeOverlay.AppCompat.Dark"
     android:background="@color/colorMain">
-
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="110dp"
@@ -18,7 +17,6 @@
         android:layout_margin="10dp"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
         android:src="@drawable/logo" />
-
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -27,5 +25,4 @@
         android:textColor="#e36966"
         android:textStyle="bold"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
-
 </LinearLayout>

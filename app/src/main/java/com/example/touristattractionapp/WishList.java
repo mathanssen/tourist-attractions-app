@@ -88,14 +88,14 @@ public class WishList extends AppCompatActivity {
     }
 
     // Go to the map in browser
-    private void goToUrl (String url) {
+    private void goToUrl(String url) {
         Uri uriUrl = Uri.parse(url);
         Intent launchBrowser = new Intent(Intent.ACTION_VIEW, uriUrl);
         startActivity(launchBrowser);
     }
 
-    public void mapPressed (View view) {
-        goToUrl ( "https://www.bing.com/maps?osid=e8987db2-5d54-4457-91e2-89284e33d5d3&cp=-23.621225~-46.812311&lvl=11&imgid=3d63f236-d0c5-4a14-975c-bd8a0d865cbe&v=2&sV=2&form=S00027");
+    public void mapPressed(View view) {
+        goToUrl("https://www.bing.com/maps?osid=e8987db2-5d54-4457-91e2-89284e33d5d3&cp=-23.621225~-46.812311&lvl=11&imgid=3d63f236-d0c5-4a14-975c-bd8a0d865cbe&v=2&sV=2&form=S00027");
     }
 
     public String loadDataFromFile() {
@@ -104,25 +104,23 @@ public class WishList extends AppCompatActivity {
         try {
             inputStream = openFileInput("wish_list.json");
 
-            if ( inputStream != null ) {
+            if (inputStream != null) {
                 InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
                 BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
                 String receiveString = "";
                 StringBuilder stringBuilder = new StringBuilder();
 
-                while ( (receiveString = bufferedReader.readLine()) != null ) {
+                while ((receiveString = bufferedReader.readLine()) != null) {
                     stringBuilder.append(receiveString);
                 }
 
                 ret = stringBuilder.toString();
             }
-        }
-        catch (FileNotFoundException e) {
+        } catch (FileNotFoundException e) {
             Log.e("login activity", "File not found: " + e.toString());
         } catch (IOException e) {
             Log.e("login activity", "Can not read file: " + e.toString());
-        }
-        finally {
+        } finally {
             try {
                 inputStream.close();
             } catch (IOException e) {
@@ -154,7 +152,7 @@ public class WishList extends AppCompatActivity {
                 Attraction attraction = new Attraction(name, favorite);
                 this.attractions.add(attraction);
             }
-        } catch(JSONException e) {
+        } catch (JSONException e) {
             e.printStackTrace();
             return;
         }
@@ -164,7 +162,7 @@ public class WishList extends AppCompatActivity {
         Context context;
         ArrayList<String> rTitle;
 
-        MyAdapter (Context c, ArrayList<String> title) {
+        MyAdapter(Context c, ArrayList<String> title) {
             super(c, R.layout.wish_list_item, R.id.textView1, title);
             this.context = c;
             this.rTitle = title;
@@ -173,7 +171,8 @@ public class WishList extends AppCompatActivity {
         @NonNull
         @Override
         public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-            LayoutInflater layoutInflater = (LayoutInflater)getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            LayoutInflater layoutInflater = (LayoutInflater) getApplicationContext()
+                    .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             View row = layoutInflater.inflate(R.layout.wish_list_item, parent, false);
             TextView myTitle = row.findViewById(R.id.textView1);
             myTitle.setText(rTitle.get(position));
@@ -182,8 +181,3 @@ public class WishList extends AppCompatActivity {
     }
 
 }
-
-
-
-
-

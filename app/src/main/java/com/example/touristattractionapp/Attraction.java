@@ -15,7 +15,8 @@ public class Attraction implements Serializable {
     private String image;
 
     // Constructor
-    public Attraction(String name, String address, String phone, String website, String description, double pricing, boolean favorite, String image) {
+    public Attraction(String name, String address, String phone, String website, String description, double pricing,
+            boolean favorite, String image) {
         this.name = name;
         this.address = address;
         this.phone = phone;
@@ -34,16 +35,9 @@ public class Attraction implements Serializable {
     // Methods
     @Override
     public String toString() {
-        return "Attraction{" +
-                "name='" + name + '\'' +
-                ", address='" + address + '\'' +
-                ", phone='" + phone + '\'' +
-                ", website='" + website + '\'' +
-                ", description='" + description + '\'' +
-                ", pricing=" + pricing +
-                ", favorite=" + favorite +
-                ", image='" + image + '\'' +
-                '}';
+        return "Attraction{" + "name='" + name + '\'' + ", address='" + address + '\'' + ", phone='" + phone + '\''
+                + ", website='" + website + '\'' + ", description='" + description + '\'' + ", pricing=" + pricing
+                + ", favorite=" + favorite + ", image='" + image + '\'' + '}';
     }
 
     // Getters and Setters

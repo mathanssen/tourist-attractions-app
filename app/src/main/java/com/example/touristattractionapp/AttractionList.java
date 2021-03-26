@@ -84,13 +84,13 @@ public class AttractionList extends AppCompatActivity implements NavigationView.
         // Navigation
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         Toolbar toolbar = findViewById(R.id.toolbar);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open,
+                R.string.navigation_drawer_close);
         if (drawer != null) {
             drawer.addDrawerListener(toggle);
         }
         toggle.syncState();
-        NavigationView navigationView = (NavigationView)
-                findViewById(R.id.nav_view);
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         if (navigationView != null) {
             navigationView.setNavigationItemSelectedListener((NavigationView.OnNavigationItemSelectedListener) this);
         }
@@ -114,7 +114,8 @@ public class AttractionList extends AppCompatActivity implements NavigationView.
                         double pricing = currentAttraction.getPricing();
                         boolean favorite = currentAttraction.isFavorite();
                         String image = currentAttraction.getImage();
-                        Attraction transferAttraction = new Attraction(currentTitle, address, phone, website, description, pricing, favorite, image);
+                        Attraction transferAttraction = new Attraction(currentTitle, address, phone, website,
+                                description, pricing, favorite, image);
                         Intent intent = new Intent(AttractionList.this, AttractionDetails.class);
                         intent.putExtra("AttractionObj", transferAttraction);
                         startActivity(intent);
@@ -181,10 +182,11 @@ public class AttractionList extends AppCompatActivity implements NavigationView.
                 double pricing = currentObject.getDouble("pricing");
                 boolean favorite = currentObject.getBoolean("favorite");
                 String image = currentObject.getString("image");
-                Attraction attraction = new Attraction(name, address, phone, website, description, pricing, favorite, image);
+                Attraction attraction = new Attraction(name, address, phone, website, description, pricing, favorite,
+                        image);
                 this.attractions.add(attraction);
             }
-        } catch(JSONException e) {
+        } catch (JSONException e) {
             e.printStackTrace();
             return;
         }
@@ -197,14 +199,14 @@ public class AttractionList extends AppCompatActivity implements NavigationView.
     }
 
     // Launch browser in the map page
-    private void goToUrl (String url) {
+    private void goToUrl(String url) {
         Uri uriUrl = Uri.parse(url);
         Intent launchBrowser = new Intent(Intent.ACTION_VIEW, uriUrl);
         startActivity(launchBrowser);
     }
 
-    public void mapPressed (View view) {
-        goToUrl ( "https://www.bing.com/maps?osid=e8987db2-5d54-4457-91e2-89284e33d5d3&cp=-23.621225~-46.812311&lvl=11&imgid=3d63f236-d0c5-4a14-975c-bd8a0d865cbe&v=2&sV=2&form=S00027");
+    public void mapPressed(View view) {
+        goToUrl("https://www.bing.com/maps?osid=e8987db2-5d54-4457-91e2-89284e33d5d3&cp=-23.621225~-46.812311&lvl=11&imgid=3d63f236-d0c5-4a14-975c-bd8a0d865cbe&v=2&sV=2&form=S00027");
     }
 
     // Create new adapter for the list view
@@ -215,7 +217,7 @@ public class AttractionList extends AppCompatActivity implements NavigationView.
         ArrayList<String> rDescription;
         ArrayList<Integer> rImgs;
 
-        MyAdapter (Context c, ArrayList<String> title, ArrayList<String> description, ArrayList<Integer> imgs) {
+        MyAdapter(Context c, ArrayList<String> title, ArrayList<String> description, ArrayList<Integer> imgs) {
             super(c, R.layout.attraction_item, R.id.textView1, title);
             this.context = c;
             this.rTitle = title;
@@ -226,7 +228,8 @@ public class AttractionList extends AppCompatActivity implements NavigationView.
         @NonNull
         @Override
         public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-            LayoutInflater layoutInflater = (LayoutInflater)getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            LayoutInflater layoutInflater = (LayoutInflater) getApplicationContext()
+                    .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             View row = layoutInflater.inflate(R.layout.attraction_item, parent, false);
             ImageView images = row.findViewById(R.id.image);
             TextView myTitle = row.findViewById(R.id.textView1);
@@ -237,6 +240,5 @@ public class AttractionList extends AppCompatActivity implements NavigationView.
             return row;
         }
     }
-
 
 }

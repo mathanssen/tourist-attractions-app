@@ -8,7 +8,6 @@
     tools:context=".Register"
     android:orientation="vertical"
     android:background="@color/colorMain">
-
     <!-- Login -->
     <EditText
         android:id="@+id/text_register_username"
@@ -23,7 +22,6 @@
         android:hint="Username"
         android:inputType="textPersonName"
         android:textSize="25dp" />
-
     <EditText
         android:id="@+id/text_register_password"
         android:layout_width="300dp"
@@ -37,7 +35,6 @@
         android:focusable="true"
         android:inputType="textPassword"
         android:textSize="25dp"/>
-
     <Button
         android:id="@+id/button_register"
         android:layout_width="350dp"
@@ -48,7 +45,6 @@
         android:textSize="20dp"
         android:layout_marginTop="80dp"
         android:onClick="secondRegisterPressed"/>
-
     <Button
         android:id="@+id/button_back"
         android:layout_width="350dp"
@@ -58,5 +54,4 @@
         android:text="I already have an account!"
         android:textSize="20dp"
         android:onClick="backInitialScreen"/>
-
 </LinearLayout>
